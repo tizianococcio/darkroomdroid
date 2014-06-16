@@ -317,7 +317,7 @@ public class MainActivity extends ActionBarActivity {
         this.customKeyboardView = (CustomKeyboardView) findViewById(R.id.keyboard_view);
         this.customKeyboardView.setKeyboard(this.mKeyboard);
         this.customKeyboardView.setOnKeyboardActionListener(new BasicOnKeyboardActionListener(this, this.customKeyboardView));
-
+        this.customKeyboardView.setPreviewEnabled(false);
         
     }
     
