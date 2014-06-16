@@ -2,7 +2,6 @@ package com.tizianococcio.darkroomdroid;
 
 import android.app.Activity;
 import android.inputmethodservice.KeyboardView.OnKeyboardActionListener;
-import android.util.Log;
 import android.view.KeyEvent;
 
 public class BasicOnKeyboardActionListener implements OnKeyboardActionListener {
@@ -11,29 +10,28 @@ public class BasicOnKeyboardActionListener implements OnKeyboardActionListener {
     private CustomKeyboardView customKeyboardView;
     
     public BasicOnKeyboardActionListener(Activity targetActivity, CustomKeyboardView ckv) {
-            mTargetActivity = targetActivity;
-            this.customKeyboardView = ckv;
+        mTargetActivity = targetActivity;
+        this.customKeyboardView = ckv;
     }
     
     @Override
     public void onKey(int primaryCode, int[] keyCodes) {
-            long eventTime = System.currentTimeMillis();
-            KeyEvent event = new KeyEvent(
-            				eventTime, 
-            				eventTime,
-                            KeyEvent.ACTION_DOWN, primaryCode, 0, 0, 0, 0,
-                            KeyEvent.FLAG_SOFT_KEYBOARD | KeyEvent.FLAG_KEEP_TOUCH_MODE);
+        long eventTime = System.currentTimeMillis();
+        KeyEvent event = new KeyEvent(
+        				eventTime, 
+        				eventTime,
+                        KeyEvent.ACTION_DOWN, primaryCode, 0, 0, 0, 0,
+                        KeyEvent.FLAG_SOFT_KEYBOARD | KeyEvent.FLAG_KEEP_TOUCH_MODE);
 
-            Log.d("KTAG", new Integer(primaryCode).toString());
-            
-            if (primaryCode == 6)
-            {
-            	this.customKeyboardView.hide();
-            }
-            else
-            {
-            	mTargetActivity.dispatchKeyEvent(event);
-            }
+        // Back key has been pressed
+        if (primaryCode == 6)
+        {
+        	this.customKeyboardView.hide();
+        }
+        else
+        {
+        	mTargetActivity.dispatchKeyEvent(event);
+        }
             
     }
 

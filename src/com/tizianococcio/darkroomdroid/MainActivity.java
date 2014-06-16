@@ -7,7 +7,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.inputmethodservice.Keyboard;
-import android.inputmethodservice.KeyboardView;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -21,10 +20,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -36,9 +33,7 @@ public class MainActivity extends ActionBarActivity {
 	// Contex
 	Context context;
 	
-	// Custom keyboard
-    private KeyboardView basicKeyboardView;
-    private CustomKeyboardView customKeyboardView;
+	private CustomKeyboardView customKeyboardView;
     private Keyboard mKeyboard;
 
 	
@@ -47,7 +42,6 @@ public class MainActivity extends ActionBarActivity {
 	private Button pauseButton;
 	private Button resetButton;
 	private Button bluetoothToggleButton;
-	private Button setTimeButton;
 	private Button increaseTimeButton;
 	private Button decreaseTimeButton;
 	
@@ -246,7 +240,6 @@ public class MainActivity extends ActionBarActivity {
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                    //basicKeyboardView.setVisibility(View.VISIBLE);
             		customKeyboardView.setVisibility(View.VISIBLE);
             		customKeyboardView.bringToFront();
             		
@@ -260,7 +253,6 @@ public class MainActivity extends ActionBarActivity {
     		
     		@Override
     		public void onClick(View arg0) {
-    			// TODO Auto-generated method stub
     			customKeyboardView.show();
     			
 				// Select the text in the timer value box
@@ -304,8 +296,13 @@ public class MainActivity extends ActionBarActivity {
     }
     
 	@Override
-	protected void onDestroy() {
+	protected void onPause() {
 		this.wl.release();
+	}
+	
+	@Override
+	protected void onDestroy() {
+		//this.wl.release();
 	}
 
     
