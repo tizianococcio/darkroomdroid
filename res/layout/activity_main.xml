@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000" >
+            
+
+            <com.tizianococcio.darkroomdroid.CustomKeyboardView
+                android:id="@+id/keyboard_view" android:visibility="gone"
+                android:layout_width="fill_parent" android:layout_height="wrap_content"
+                style="@style/keyboard_1_style"
+                android:layout_alignParentBottom="true"></com.tizianococcio.darkroomdroid.CustomKeyboardView>
+    <EditText
+        android:id="@+id/timeoutValue"
+	    android:selectAllOnFocus="true"
+	    android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/timerValue"
+        android:layout_alignRight="@+id/timerValue"
+        android:background="#660000"
+        android:ems="7"
+        android:hint="@string/timeHint"
+        android:inputType="numberDecimal"
+        android:textColorHint="#AF2D1F"
+        android:gravity="center_horizontal|center_vertical"
+        android:minHeight="20pt" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/timerValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/startButton"
+        android:layout_centerHorizontal="true"
+        android:text="@string/timerVal"
+        android:textColor="#AF2D1F"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/resetButton"
+        style="@style/defaultButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:text="@string/resetButtonLabel"
+         />
+
+    <Button
+        android:id="@+id/pauseButton"
+        style="@style/defaultButton"
+        android:layout_above="@+id/resetButton"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="36dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/pauseButtonLabel"
+        />
+
+    <Button
+        android:id="@+id/startButton"
+        style="@style/defaultButton"
+        android:layout_alignBaseline="@+id/pauseButton"
+        android:layout_alignBottom="@+id/pauseButton"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:text="@string/startButtonLabel"
+		/>
+
+    <Button
+        android:id="@+id/btnBluetoothToggle"
+        style="@style/defaultButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/resetButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/resetButton"
+        android:text="@string/btnBluetoothToggleLabel" />
+
+    <Button
+        android:id="@+id/btnDecreaseTime"
+        style="@style/timerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/timeoutValue"
+        android:layout_toLeftOf="@+id/timerValue"
+        android:text="@string/decreaseTimeLabel"
+        />
+
+    <Button
+        android:id="@+id/btnIncreaseTime"
+        style="@style/timerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/timeoutValue"
+        android:text="@string/increaseTimeLabel" />
+    
+    
+
+</RelativeLayout>
