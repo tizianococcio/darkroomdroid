@@ -96,24 +96,6 @@ public class MainActivity extends ActionBarActivity {
         // Set UI components
         this.initUIComponents();
         
-        // Custom Keyboard
-        /*
-        txtTimeoutValue.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				if (mKeyboardView.getVisibility() == View.GONE) {
-					mKeyboardView.setVisibility(View.VISIBLE);
-				}
-				Log.d("TTAG", "KEYBOARDDD");
-				return true;
-			}
-		});
-        mKeyboardView = (KeyboardView) findViewById(R.id.keyboard_view);
-        mKeyboardView.setKeyboard(mKeyboard);
-        mKeyboardView.setOnKeyboardActionListener(new BasicOnKeyboardActionListener(this));
-        mKeyboard = new Keyboard(this, R.xml.keyboard);
-        */
-        
         // Handling click on start button
 		startButton.setOnClickListener(new View.OnClickListener() {
 
