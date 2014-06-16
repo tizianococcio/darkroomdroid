@@ -5,26 +5,29 @@
     android:background="#000000" >
             
 
-            <com.tizianococcio.darkroomdroid.CustomKeyboardView
-                android:id="@+id/keyboard_view" android:visibility="gone"
-                android:layout_width="fill_parent" android:layout_height="wrap_content"
-                style="@style/keyboard_1_style"
-                android:layout_alignParentBottom="true"></com.tizianococcio.darkroomdroid.CustomKeyboardView>
+    <com.tizianococcio.darkroomdroid.CustomKeyboardView
+        android:id="@+id/keyboard_view" android:visibility="gone"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        style="@style/keyboard_1_style"
+        android:layout_alignParentBottom="true"></com.tizianococcio.darkroomdroid.CustomKeyboardView>
+
     <EditText
         android:id="@+id/timeoutValue"
-	    android:selectAllOnFocus="true"
-	    android:singleLine="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/timerValue"
-        android:layout_alignRight="@+id/timerValue"
+        android:layout_alignLeft="@+id/btnBluetoothToggle"
+        android:layout_alignRight="@+id/btnBluetoothToggle"
         android:background="#660000"
         android:ems="7"
+        android:gravity="center_horizontal|center_vertical"
         android:hint="@string/timeHint"
         android:inputType="numberDecimal"
-        android:textColorHint="#AF2D1F"
-        android:gravity="center_horizontal|center_vertical"
-        android:minHeight="20pt" >
+        android:minHeight="20pt"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textColorHint="#AF2D1F" >
+
     </EditText>
 
     <TextView
@@ -81,20 +84,17 @@
         style="@style/timerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/timeoutValue"
-        android:layout_toLeftOf="@+id/timerValue"
-        android:text="@string/decreaseTimeLabel"
-        />
+        android:layout_above="@+id/timerValue"
+        android:layout_alignLeft="@+id/startButton"
+        android:text="@string/decreaseTimeLabel" />
 
     <Button
         android:id="@+id/btnIncreaseTime"
         style="@style/timerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/timeoutValue"
+        android:layout_above="@+id/timerValue"
+        android:layout_alignRight="@+id/pauseButton"
         android:text="@string/increaseTimeLabel" />
-    
-    
 
 </RelativeLayout>
