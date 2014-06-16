@@ -2,7 +2,7 @@ package com.tizianococcio.darkroomdroid;
 
 
 import com.tizianococcio.darkroomdroid.CustomKeyboardView;
-
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
@@ -263,7 +263,8 @@ public class MainActivity extends ActionBarActivity {
     }
     
     // Application initialization
-    @SuppressWarnings("deprecation")
+    @SuppressLint("Wakelock")
+	@SuppressWarnings("deprecation")
 	private void init()
     {
     	
@@ -294,17 +295,6 @@ public class MainActivity extends ActionBarActivity {
         this.customKeyboardView.setPreviewEnabled(false);
         
     }
-    
-	@Override
-	protected void onPause() {
-		this.wl.release();
-	}
-	
-	@Override
-	protected void onDestroy() {
-		//this.wl.release();
-	}
-
     
     // Bootstraps bluetooth
     private void initBluetooth()
