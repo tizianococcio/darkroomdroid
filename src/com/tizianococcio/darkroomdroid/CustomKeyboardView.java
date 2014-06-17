@@ -11,6 +11,7 @@ public class CustomKeyboardView extends KeyboardView {
 
     public CustomKeyboardView(Context context, AttributeSet attrs) {
             super(context, attrs);
+            isInEditMode();
     }
 
     public void showWithAnimation(Animation animation) {
