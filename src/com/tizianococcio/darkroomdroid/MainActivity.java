@@ -2,6 +2,7 @@ package com.tizianococcio.darkroomdroid;
 
 
 import com.tizianococcio.darkroomdroid.CustomKeyboardView;
+
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -21,6 +22,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,7 +43,7 @@ public class MainActivity extends ActionBarActivity {
 	private Button startButton;
 	private Button pauseButton;
 	private Button resetButton;
-	private Button bluetoothToggleButton;
+	private Button bluetoothToggleButton; 
 	private Button increaseTimeButton;
 	private Button decreaseTimeButton;
 	
@@ -79,6 +81,11 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        // Goes to full-screen mode
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_main);
         
         // init application
