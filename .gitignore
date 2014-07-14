@@ -1,1 +1,5 @@
+# Exclude binaries
 bin/*
+
+# Exclude OS X folder attributes
+.DS_Store
