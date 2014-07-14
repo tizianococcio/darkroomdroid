@@ -97,4 +97,15 @@
         android:layout_alignRight="@+id/pauseButton"
         android:text="@string/increaseTimeLabel" />
 
+    <Button
+        android:id="@+id/btnFocus"
+        style="@style/timerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnDecreaseTime"
+        android:layout_alignLeft="@+id/timeoutValue"
+        android:layout_alignRight="@+id/timeoutValue"
+        android:layout_marginBottom="37dp"
+        android:text="@string/focusBtnLabel" />
+
 </RelativeLayout>

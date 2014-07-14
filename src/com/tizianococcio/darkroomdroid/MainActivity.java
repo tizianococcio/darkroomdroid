@@ -46,6 +46,7 @@ public class MainActivity extends ActionBarActivity {
 	private Button bluetoothToggleButton; 
 	private Button increaseTimeButton;
 	private Button decreaseTimeButton;
+	private Button focusButton;
 	
 	// TextView
 	private TextView timerValue;
@@ -77,6 +78,9 @@ public class MainActivity extends ActionBarActivity {
 	
 	// Debug Tag
 	private final String LOG_TAG = "DCB";
+	
+	// Focus toggle status
+	private boolean focusStatus = false;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -217,6 +221,20 @@ public class MainActivity extends ActionBarActivity {
             }
         });
         
+        // Handling click on focus button
+        focusButton.setOnClickListener(new View.OnClickListener() {
+        	@Override
+        	public void onClick(View view) {
+        		if (focusStatus) {
+        			relayController.switchOff();
+        			focusStatus = false;
+        		} else {
+        			relayController.switchOn();
+        			focusStatus = true;
+        		}
+        	}
+        });
+        
         // Handling click on bluetooth toggle button
         bluetoothToggleButton.setOnClickListener(new View.OnClickListener() {
         	@Override
@@ -328,6 +346,7 @@ public class MainActivity extends ActionBarActivity {
         bluetoothToggleButton = (Button) findViewById(R.id.btnBluetoothToggle);
         increaseTimeButton = (Button) findViewById(R.id.btnIncreaseTime);
         decreaseTimeButton = (Button) findViewById(R.id.btnDecreaseTime);
+        focusButton = (Button) findViewById(R.id.btnFocus);
         
         // EditText
         txtTimeoutValue = (EditText) findViewById(R.id.timeoutValue);

@@ -14,6 +14,7 @@
     <string name="increaseTimeLabel">+</string>
     <string name="decreaseTimeLabel">-</string>
     
+    <string name="focusBtnLabel">FOCUS</string>
     <string name="timeHint">Time</string>
 
 </resources>
